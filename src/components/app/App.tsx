@@ -1,10 +1,10 @@
 import css from "./App.module.css";
-import CareInfo from "../careinfo/careInfo";
-import VoteOptions from "../voteOptions/voteOptions";
+import CareInfo from "../CareInfo/careInfo";
+import VoteOptions from "../VoteOptions/voteOptions";
 import { useState } from "react";
 import type { Votes, VoteType } from "../../types/votes";
-import VoteStats from "../voteStats/voteStats";
-import Notification from "../notification/notification";
+import VoteStats from "../VoteStats/voteStats";
+import Notification from "../Notification/notification";
 
 const initialVotes: Votes = {
   good: 0,
