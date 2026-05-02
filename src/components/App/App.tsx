@@ -1,5 +1,5 @@
 import css from "./App.module.css";
-import CareInfo from "../CareInfo/careInfo";
+import CareInfo from "../CafeInfo/careInfo";
 import VoteOptions from "../VoteOptions/voteOptions";
 import { useState } from "react";
 import type { Votes, VoteType } from "../../types/votes";
