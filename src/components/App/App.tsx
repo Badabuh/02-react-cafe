@@ -1,10 +1,10 @@
 import css from "./App.module.css";
-import CareInfo from "../CafeInfo/careInfo";
-import VoteOptions from "../VoteOptions/voteOptions";
+import CafeInfo from "../CafeInfo/CafeInfo";
+import VoteOptions from "../VoteOptions/VoteOptions";
 import { useState } from "react";
 import type { Votes, VoteType } from "../../types/votes";
-import VoteStats from "../VoteStats/voteStats";
-import Notification from "../Notification/notification";
+import VoteStats from "../VoteStats/VoteStats";
+import Notification from "../Notification/Notification";
 
 const initialVotes: Votes = {
   good: 0,
@@ -30,7 +30,7 @@ export default function App() {
 
   return (
     <div className={css.app}>
-      <CareInfo />
+      <CafeInfo />
       <VoteOptions
         canReset={totalVotes > 0}
         onVote={handleVote}
