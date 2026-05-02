@@ -15,11 +15,7 @@ const initialVotes: Votes = {
 export default function App() {
   const [votes, setVotes] = useState<Votes>(initialVotes);
   const totalVotes = votes.good + votes.neutral + votes.bad;
-  const stats = {
-    ...votes,
-    total: totalVotes,
-    positivePercentage: totalVotes ? (votes.good / totalVotes) * 100 : 0,
-  };
+  const positiveRate = totalVotes ? (votes.good / totalVotes) * 100 : 0;
 
   function handleVote(type: VoteType) {
     setVotes((prev) => ({ ...prev, [type]: prev[type] + 1 }));
@@ -37,7 +33,13 @@ export default function App() {
         onReset={resetVotes}
       />
       {totalVotes === 0 && <Notification />}
-      {totalVotes > 0 && <VoteStats stats={stats} />}
+      {totalVotes > 0 && (
+        <VoteStats
+          votes={votes}
+          totalVotes={totalVotes}
+          positiveRate={positiveRate}
+        />
+      )}
     </div>
   );
 }
